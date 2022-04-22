@@ -3,7 +3,6 @@ package com.example.flywaytask.controllers;
 import com.example.flywaytask.services.SubjectsService;
 import com.example.flywaytask.services.dto.RecordCountResponseDTO;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SubjectsRestController {
     private final SubjectsService subjectsService;
 
-    @GetMapping(value = "/count", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/count")
     public RecordCountResponseDTO getSubjectsCount() {
         return subjectsService.count();
     }

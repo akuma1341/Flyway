@@ -1,11 +1,10 @@
 package com.example.flywaytask.services;
 
 import com.example.flywaytask.entities.ExamMark;
-import com.example.flywaytask.services.dto.RecordCountResponseDTO;
 
 import java.util.List;
 
-public interface ExamMarksService {
+public interface ExamMarksService extends RecordCountGetterService {
     List<ExamMark> getAll();
 
     ExamMark getById(Integer id);
@@ -13,6 +12,4 @@ public interface ExamMarksService {
     ExamMark save(ExamMark examMark);
 
     void delete(Integer id);
-
-    RecordCountResponseDTO count();
 }
