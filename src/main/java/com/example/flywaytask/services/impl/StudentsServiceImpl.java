@@ -1,5 +1,6 @@
 package com.example.flywaytask.services.impl;
 
+import com.example.flywaytask.config.EntityName;
 import com.example.flywaytask.entities.Student;
 import com.example.flywaytask.repositories.StudentsRepository;
 import com.example.flywaytask.services.StudentsService;
@@ -37,5 +38,10 @@ public class StudentsServiceImpl implements StudentsService {
     @Override
     public RecordCountResponseDTO count() {
         return new RecordCountResponseDTO(studentsRepository.count());
+    }
+
+    @Override
+    public EntityName getEntityName() {
+        return EntityName.STUDENT;
     }
 }
