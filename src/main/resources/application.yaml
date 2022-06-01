@@ -22,3 +22,7 @@ my:
         txt: students.txt
         csv: students.csv
         xlsx: students.xlsx
+
+app:
+  scheduling:
+    enable: true

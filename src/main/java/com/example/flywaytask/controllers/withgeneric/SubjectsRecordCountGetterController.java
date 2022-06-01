@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/subjectsRecordCount")
 @RequiredArgsConstructor
 public class SubjectsRecordCountGetterController {
+
     private final GenericRecordCountGetterService<SubjectsRecordCountDTO> recordCountGetter;
 
     @GetMapping

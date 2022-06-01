@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/students")
 @RequiredArgsConstructor
 public class StudentsRestController {
+
     private final StudentsService studentsService;
 
     @GetMapping(value = "/count")
