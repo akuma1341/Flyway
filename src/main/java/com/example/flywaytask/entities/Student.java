@@ -1,9 +1,6 @@
 package com.example.flywaytask.entities;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -12,10 +9,13 @@ import java.util.Set;
 
 @Entity
 @Table(name = "students")
+@Builder
 @Getter
 @Setter
 @EqualsAndHashCode
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

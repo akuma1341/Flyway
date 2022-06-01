@@ -15,3 +15,10 @@ my:
   entity:
     names:
       subject: SUBJECT
+  export:
+    file:
+      path: D:\dbExport
+      name:
+        txt: students.txt
+        csv: students.csv
+        xlsx: students.xlsx

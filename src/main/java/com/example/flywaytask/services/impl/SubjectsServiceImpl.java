@@ -31,6 +31,11 @@ public class SubjectsServiceImpl implements SubjectsService {
     }
 
     @Override
+    public List<Subject> saveAll(Iterable<Subject> subjects) {
+        return subjectsRepository.saveAll(subjects);
+    }
+
+    @Override
     public void delete(Integer id) {
         subjectsRepository.deleteById(id);
     }

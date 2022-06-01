@@ -31,6 +31,11 @@ public class ExamMarksServiceImpl implements ExamMarksService {
     }
 
     @Override
+    public List<ExamMark> saveAll(Iterable<ExamMark> examMarks) {
+        return examMarksRepository.saveAll(examMarks);
+    }
+
+    @Override
     public void delete(Integer id) {
         examMarksRepository.deleteById(id);
     }
