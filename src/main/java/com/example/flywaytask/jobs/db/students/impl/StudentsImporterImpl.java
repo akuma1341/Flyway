@@ -2,8 +2,8 @@ package com.example.flywaytask.jobs.db.students.impl;
 
 import com.example.flywaytask.entities.Student;
 import com.example.flywaytask.jobs.db.students.StudentsImporter;
-import com.example.flywaytask.services.DataBaseUtils;
 import com.example.flywaytask.services.StudentsService;
+import com.example.flywaytask.services.dbutils.DatabaseImporter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,8 +16,9 @@ import java.io.IOException;
 @RequiredArgsConstructor
 @Slf4j
 public class StudentsImporterImpl implements StudentsImporter {
+
     private final StudentsService studentsService;
-    private final DataBaseUtils<Student, Integer> dataBaseUtils;
+    private final DatabaseImporter<Student, Integer> databaseImporter;
 
     @Value("${my.export.file.path}")
     private String filePath;
@@ -30,7 +31,7 @@ public class StudentsImporterImpl implements StudentsImporter {
         File fromFile = new File(filePath, fromFileName);
 
         try {
-            dataBaseUtils.importDataFromXlsxFile(fromFile, studentsService);
+            databaseImporter.importDataFromXlsxFile(fromFile, studentsService);
         } catch (IOException e) {
             log.error("Error: " + e);
         }

@@ -7,12 +7,15 @@ import com.example.flywaytask.services.ExamMarksService;
 import com.example.flywaytask.services.dto.RecordCountResponseDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class ExamMarksServiceImpl implements ExamMarksService {
+
     private final ExamMarksRepository examMarksRepository;
 
     @Override
@@ -31,6 +34,7 @@ public class ExamMarksServiceImpl implements ExamMarksService {
     }
 
     @Override
+    @Transactional(isolation = Isolation.SERIALIZABLE)
     public List<ExamMark> saveAll(Iterable<ExamMark> examMarks) {
         return examMarksRepository.saveAll(examMarks);
     }

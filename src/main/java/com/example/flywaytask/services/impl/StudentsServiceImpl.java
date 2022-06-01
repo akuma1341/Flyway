@@ -7,12 +7,15 @@ import com.example.flywaytask.services.StudentsService;
 import com.example.flywaytask.services.dto.RecordCountResponseDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class StudentsServiceImpl implements StudentsService {
+
     private final StudentsRepository studentsRepository;
 
     @Override
@@ -31,6 +34,7 @@ public class StudentsServiceImpl implements StudentsService {
     }
 
     @Override
+    @Transactional(isolation = Isolation.SERIALIZABLE)
     public List<Student> saveAll(Iterable<Student> students) {
         return studentsRepository.saveAll(students);
     }

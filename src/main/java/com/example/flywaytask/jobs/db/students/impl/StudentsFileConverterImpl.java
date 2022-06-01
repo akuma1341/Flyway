@@ -1,8 +1,8 @@
 package com.example.flywaytask.jobs.db.students.impl;
 
-import com.example.flywaytask.entities.Student;
 import com.example.flywaytask.jobs.db.students.StudentsFileConverter;
-import com.example.flywaytask.services.DataBaseUtils;
+import com.example.flywaytask.services.dbutils.FileConverter;
+import com.example.flywaytask.services.dbutils.FileCreator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,7 +16,8 @@ import java.io.IOException;
 @Slf4j
 public class StudentsFileConverterImpl implements StudentsFileConverter {
 
-    private final DataBaseUtils<Student, Integer> dataBaseUtils;
+    private final FileCreator fileCreator;
+    private final FileConverter fileConverter;
 
     @Value("${my.export.file.path}")
     private String filePath;
@@ -36,8 +37,8 @@ public class StudentsFileConverterImpl implements StudentsFileConverter {
         File toFile = new File(filePath, csvFileName);
 
         try {
-            dataBaseUtils.createFile(toFile);
-            dataBaseUtils.convertDataFromTxtFileToCSVFile(fromFile, toFile);
+            fileCreator.createFile(toFile);
+            fileConverter.convertDataFromTxtFileToCSVFile(fromFile, toFile);
         } catch (IOException e) {
             log.error("Error: " + e);
         }
@@ -50,8 +51,8 @@ public class StudentsFileConverterImpl implements StudentsFileConverter {
         File toFile = new File(filePath, xlsxFileName);
 
         try {
-            dataBaseUtils.createFile(toFile);
-            dataBaseUtils.convertDataFromCsvFileToXlsxFile(fromFile, toFile);
+            fileCreator.createFile(toFile);
+            fileConverter.convertDataFromCsvFileToXlsxFile(fromFile, toFile);
         } catch (Exception e) {
             log.error("Error: " + e);
         }

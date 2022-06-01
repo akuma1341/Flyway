@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class GenericSubjectsRecordCountGetterServiceImpl implements GenericRecordCountGetterService<SubjectsRecordCountDTO> {
+
     private final SubjectsRepository subjectsRepository;
 
     @Override

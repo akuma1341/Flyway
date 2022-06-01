@@ -16,6 +16,7 @@ import java.util.Set;
 @EqualsAndHashCode
 @ToString
 public class Subject {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_subject")
