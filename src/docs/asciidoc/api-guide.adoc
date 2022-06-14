@@ -1,0 +1,53 @@
+== Endpoints
+=== Students
+==== Get all students
+===== Curl example
+include::{snippets}/students-rest-controller-tests/when-get-all-students_then-status-ok/curl-request.adoc[]
+===== HTTP Request
+include::{snippets}/students-rest-controller-tests/when-get-all-students_then-status-ok/http-request.adoc[]
+===== HTTP Response
+====== Success HTTP responses
+include::{snippets}/students-rest-controller-tests/when-get-all-students_then-status-ok/http-response.adoc[]
+====== HTTPie request
+include::{snippets}/students-rest-controller-tests/when-get-all-students_then-status-ok/httpie-request.adoc[]
+====== Response body
+include::{snippets}/students-rest-controller-tests/when-get-all-students_then-status-ok/response-body.adoc[]
+
+==== Get student by id
+===== Curl example
+include::{snippets}/students-rest-controller-tests/given-student_when-get-student-by-id_then-status-ok/curl-request.adoc[]
+===== HTTP Request
+include::{snippets}/students-rest-controller-tests/given-student_when-get-student-by-id_then-status-ok/http-request.adoc[]
+===== HTTP Response
+====== Success HTTP responses
+include::{snippets}/students-rest-controller-tests/given-student_when-get-student-by-id_then-status-ok/http-response.adoc[]
+====== HTTPie request
+include::{snippets}/students-rest-controller-tests/given-student_when-get-student-by-id_then-status-ok/httpie-request.adoc[]
+====== Response body
+include::{snippets}/students-rest-controller-tests/given-student_when-get-student-by-id_then-status-ok/response-body.adoc[]
+
+==== Post new student
+===== Curl example
+include::{snippets}/students-rest-controller-tests/given-student_when-post-student_then-status-ok/curl-request.adoc[]
+===== HTTP Request
+include::{snippets}/students-rest-controller-tests/given-student_when-post-student_then-status-ok/http-request.adoc[]
+===== HTTP Response
+====== Success HTTP responses
+include::{snippets}/students-rest-controller-tests/given-student_when-post-student_then-status-ok/http-response.adoc[]
+====== HTTPie request
+include::{snippets}/students-rest-controller-tests/given-student_when-post-student_then-status-ok/httpie-request.adoc[]
+====== Response body
+include::{snippets}/students-rest-controller-tests/given-student_when-post-student_then-status-ok/response-body.adoc[]
+
+==== Put student (update)
+===== Curl example
+include::{snippets}/students-rest-controller-tests/given-student_when-put-student_then-status-ok/curl-request.adoc[]
+===== HTTP Request
+include::{snippets}/students-rest-controller-tests/given-student_when-put-student_then-status-ok/http-request.adoc[]
+===== HTTP Response
+====== Success HTTP responses
+include::{snippets}/students-rest-controller-tests/given-student_when-put-student_then-status-ok/http-response.adoc[]
+====== HTTPie request
+include::{snippets}/students-rest-controller-tests/given-student_when-put-student_then-status-ok/httpie-request.adoc[]
+====== Response body
+include::{snippets}/students-rest-controller-tests/given-student_when-put-student_then-status-ok/response-body.adoc[]
