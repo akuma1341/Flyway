@@ -6,9 +6,17 @@ spring:
     password: sa
 
   jpa:
-    show-sql: true
     hibernate:
       ddl-auto: none
+      use-new-id-generator-mappings: false
+    show-sql: true
+    properties:
+      org:
+        hibernate:
+          envers:
+            audit_table_suffix: _AUDITION
+            revision_field_name: REVISION_ID
+            revision_type_field_name: REVISION_TYPE
 
 my:
   entityname: STUDENT

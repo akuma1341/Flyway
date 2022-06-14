@@ -1,6 +1,8 @@
 package com.example.flywaytask.entities;
 
 import lombok.*;
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -9,6 +11,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "students")
+@Audited(withModifiedFlag = true)
 @Builder
 @Getter
 @Setter
@@ -32,8 +35,9 @@ public class Student {
     @Column(name = "birth_date")
     private Date birthDate;
 
+    @OneToMany(mappedBy = "student")
+    @NotAudited
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
-    @OneToMany(mappedBy = "student")
     private Set<ExamMark> examMarks = new HashSet<>();
 }
