@@ -1,5 +1,6 @@
 package com.example.flywaytask.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.envers.Audited;
 import org.hibernate.envers.NotAudited;
@@ -39,5 +40,6 @@ public class Student {
     @NotAudited
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
+    @JsonIgnore
     private Set<ExamMark> examMarks = new HashSet<>();
 }
