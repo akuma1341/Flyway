@@ -10,7 +10,7 @@ public interface EntityCRUDService<E, ID> {
 
     E save(E entity);
 
-    List<E> saveAll(Iterable<E> entities);
+    List<E> saveAll(List<E> entities);
 
     void delete(ID id);
 }
