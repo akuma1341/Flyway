@@ -35,7 +35,7 @@ public class SubjectsServiceImpl implements SubjectsService {
 
     @Override
     @Transactional(isolation = Isolation.SERIALIZABLE)
-    public List<Subject> saveAll(Iterable<Subject> subjects) {
+    public List<Subject> saveAll(List<Subject> subjects) {
         return subjectsRepository.saveAll(subjects);
     }
 

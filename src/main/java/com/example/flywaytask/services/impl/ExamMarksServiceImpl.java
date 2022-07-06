@@ -35,7 +35,7 @@ public class ExamMarksServiceImpl implements ExamMarksService {
 
     @Override
     @Transactional(isolation = Isolation.SERIALIZABLE)
-    public List<ExamMark> saveAll(Iterable<ExamMark> examMarks) {
+    public List<ExamMark> saveAll(List<ExamMark> examMarks) {
         return examMarksRepository.saveAll(examMarks);
     }
 

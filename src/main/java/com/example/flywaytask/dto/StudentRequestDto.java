@@ -1,26 +1,27 @@
 package com.example.flywaytask.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import java.sql.Date;
 
 @Getter
-@RequiredArgsConstructor
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Schema(description = "Student DTO")
 public class StudentRequestDto {
 
     @Schema(accessMode = Schema.AccessMode.READ_ONLY,
             description = "id", example = "23")
-    private final Integer id;
+    private Integer id;
 
     @Schema(description = "Students first name", example = "John")
-    private final String firstName;
+    private String firstName;
 
     @Schema(description = "Students last name", example = "Smith")
-    private final String lastName;
+    private String lastName;
 
     @Schema(description = "Students birth date", example = "1999-12-31")
-    private final Date birthDate;
+    private Date birthDate;
 }
