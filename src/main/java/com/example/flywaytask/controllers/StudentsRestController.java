@@ -36,7 +36,7 @@ public class StudentsRestController {
         return studentsService.getById(id);
     }
 
-    @PostMapping(value = "")
+    @PostMapping
     @Operation(summary = "Create student", description = "Allows to create new student")
     public Student create(@RequestBody StudentRequestDto studentRequestDto) {
         return studentsService.save(studentConverter.toEntity(studentRequestDto));
